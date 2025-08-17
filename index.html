@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quarterly Earnings — Interactive RevealJS Deck</title>
+
+    <!-- RevealJS core styles -->
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css" id="theme" />
+
+    <!-- Code highlight theme (Monokai) -->
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css" id="hljs-theme" />
+
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <h2>Quarterly Earnings Report</h2>
+          <p>Technical Consultant: <strong>Muthu Chockalingam</strong></p>
+          <p>Email: <a href="mailto:24f1000447@ds.study.iitm.ac.in">24f1000447@ds.study.iitm.ac.in</a></p>
+          <p class="fragment fade-in-then-semi-out">Modern • Interactive • Publishable</p>
+          <p class="fragment fade-in">Use <kbd>S</kbd> for speaker notes</p>
+          <aside class="notes">
+            Welcome stakeholders. This deck demonstrates a modern, interactive presentation for our quarterly earnings report using RevealJS. Use the arrow keys to navigate. Press the <em>S</em> key to open presenter view with these notes.
+          </aside>
+        </section>
+
+        <!-- Markdown slide (requirement: at least one slide in Markdown) -->
+        <section data-markdown>
+          <textarea data-template>
+# Headline Results *(Markdown)*
+
+- **Revenue:** ₹12,340 Cr  **↑ 8% YoY** <!-- .element: class="fragment" data-fragment-index="1" -->
+- **EPS:** 23.1  **↑ 5%** <!-- .element: class="fragment" data-fragment-index="2" -->
+- **NIM:** 3.65%  **stable** <!-- .element: class="fragment" data-fragment-index="3" -->
+- **Guidance:** *FY25 maintained* <!-- .element: class="fragment" data-fragment-index="4" -->
+
+> Notes for you: use fragments (the bullet points reveal one by one) to control the narrative.
+
+---
+
+## Segment Mix
+
+- Retail Banking — 56% <!-- .element: class="fragment" -->
+- Corporate Banking — 31% <!-- .element: class="fragment" -->
+- Treasury/Other — 13% <!-- .element: class="fragment" -->
+
+*Press* ▶︎ *to continue.*
+          </textarea>
+        </section>
+
+        <!-- Animated breakdown with fragments -->
+        <section>
+          <h3>Earnings Walk</h3>
+          <ol>
+            <li class="fragment">Q-o-Q revenue growth: +2.1%</li>
+            <li class="fragment">Operating expenses: -0.8% (efficiency initiatives)</li>
+            <li class="fragment">Provisions: +0.3% (prudence on unsecured book)</li>
+            <li class="fragment">PAT growth: +2.6%</li>
+          </ol>
+          <aside class="notes">
+            Reveal each driver step-by-step. Pause on provisions—explain the proactive stance and compare to last quarter.
+          </aside>
+        </section>
+
+        <!-- Code sample with syntax highlighting -->
+        <section>
+          <h3>Analyst Snippet: Quick EPS Calc (Python)</h3>
+<pre><code class="language-python">def eps(net_income, shares_outstanding):
+    return net_income / shares_outstanding
+
+net_income = 12_450_000_000  # INR
+shares = 538_000_000
+print(round(eps(net_income, shares), 2))
+</code></pre>
+          <aside class="notes">
+            Code highlighting is built-in via highlight.js. You can swap languages or add interactive demos.
+          </aside>
+        </section>
+
+        <!-- Math / financial formulas -->
+        <section data-auto-animate>
+          <h3>Valuation & Risk</h3>
+          <p>Discounted Cash Flow (DCF):</p>
+          <p>
+            \[
+              PV = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t}
+            \]
+          </p>
+          <p class="fragment">Black–Scholes (call option):</p>
+          <p class="fragment">
+            \[
+              C = S\,N(d_1) - K e^{-rT} N(d_2)
+            \]
+          </p>
+          <aside class="notes">
+            Use this slide to discuss valuation scenarios; step to reveal Black–Scholes only if stakeholders ask about hedging/ALM.
+          </aside>
+        </section>
+
+        <!-- Speaker-notes heavy slide for guidance -->
+        <section>
+          <h3>Guidance & Outlook</h3>
+          <ul>
+            <li class="fragment">FY25 credit growth: low double digits</li>
+            <li class="fragment">Cost-to-income: improving 50–80 bps</li>
+            <li class="fragment">NIM expected to be broadly stable</li>
+          </ul>
+          <aside class="notes">
+            Keep guidance conservative. Emphasize disciplined growth and quality of earnings. If asked about CET1, pivot to capital buffers and internal accruals.
+          </aside>
+        </section>
+
+        <!-- Closing / contact -->
+        <section>
+          <h2>Thank You</h2>
+          <p>Questions? Reach me at <a href="mailto:24f1000447@ds.study.iitm.ac.in">24f1000447@ds.study.iitm.ac.in</a></p>
+          <p class="fragment">Deck hosted on GitHub Pages</p>
+          <aside class="notes">
+            Invite Q&A. Mention that the deck is versioned via cache-busting query params.
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <!-- RevealJS core & plugins -->
+    <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
+
+    <!-- KaTeX runtime for math plugin -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        progress: true,
+        center: true,
+        transition: 'slide',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+        // Optional: tweak keyboard help in presenter view
+        keyboard: {
+          83: function() { /* 's' */ Reveal.getPlugin('notes').open(); }
+        }
+      });
+    </script>
+  </body>
+</html>
